@@ -85,3 +85,4 @@ from .update_user_asset_group_access.action import UpdateUserAssetGroupAccess
 from .update_user_role.action import UpdateUserRole
 from .update_user_site_access.action import UpdateUserSiteAccess
 from .update_vulnerability_exception_expiration_date.action import UpdateVulnerabilityExceptionExpirationDate
+from .update_vulnerability_exception_status.action import UpdateVulnerabilityExceptionStatus

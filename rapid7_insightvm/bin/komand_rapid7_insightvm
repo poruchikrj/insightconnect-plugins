@@ -195,6 +195,8 @@ class ICONRapid7Insightvm(komand.Plugin):
 
         self.add_action(actions.UpdateVulnerabilityExceptionExpirationDate())
 
+        self.add_action(actions.UpdateVulnerabilityExceptionStatus())
+
 
 def main():
     """Run plugin"""

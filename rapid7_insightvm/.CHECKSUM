@@ -1,6 +1,6 @@
 {
-	"spec": "629a56ad44dcfdb0485259725aa71645",
-	"manifest": "cee11dbb1f0ec8cd8535161fe81fd4ad",
+	"spec": "a929d2068a4c76589fe6d22ad1963e64",
+	"manifest": "bfa066b967e49b8bb2f00f4eaf9f2058",
 	"setup": "18e154cb6b9761bb87e6d05eb5e4f61c",
 	"schemas": [
 		{
@@ -346,6 +346,10 @@
 		{
 			"identifier": "update_vulnerability_exception_expiration_date/schema.py",
 			"hash": "25bc3fe35b772ba3c8d6b7e0824a4121"
+		},
+		{
+			"identifier": "update_vulnerability_exception_status/schema.py",
+			"hash": "cb22a651d252b29cec6f3376a2a82cb4"
 		},
 		{
 			"identifier": "connection/schema.py",

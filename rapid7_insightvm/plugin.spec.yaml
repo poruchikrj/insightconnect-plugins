@@ -3690,7 +3690,33 @@ actions:
         type: boolean
         required: true
         example: True
-
+  update_vulnerability_exception_status:
+    title: Update Vulnerability Exception Status
+    description: Update vulnerability exception status
+    input:
+      id:
+        title: ID
+        description: Asset ID
+        type: integer
+        required: true
+        example: 42
+      status:
+        title: Status
+        description: Vulnerability exception status
+        type: string
+        required: true
+        example: "approve"
+        enum:
+          - approve
+          - recall
+          - reject
+    output:
+      success:
+        title: Success
+        description: Was operation successful
+        type: boolean
+        required: true
+        example: True
 
 triggers:
   new_scans:

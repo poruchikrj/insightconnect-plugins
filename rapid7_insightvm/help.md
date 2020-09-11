@@ -34,6 +34,37 @@ Example input:
 
 ### Actions
 
+#### Update Vulnerability Exception Status
+
+This action is used to update vulnerability exception status.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|id|integer|None|True|Asset ID|None|42|
+|status|string|None|True|Vulnerability exception status|['approve', 'recall', 'reject']|approve|
+
+Example input:
+
+```
+{
+  "id": 42,
+  "status": "approve"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|boolean|True|Was operation successful|
+
+Example output:
+
+```
+```
+
 #### Update Vulnerability Exception Expiration Date
 
 This action is used to update vulnerability exception expiration dates.

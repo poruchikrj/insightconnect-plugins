@@ -25,7 +25,7 @@ class ListInactiveAssets(komand.Action):
             "filters": [
                 {
                     "field": "last-scan-date",
-                    "operator": "is-earlier-than",
+                    "operator": "is earlier than",
                     "value": days_ago
                 }
             ],

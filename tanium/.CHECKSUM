@@ -1,0 +1,15 @@
+{
+	"spec": "f5f61793b7f64c2b9a9957d558569f20",
+	"manifest": "521c0f2a03f58fb3fa1db5b4b93b07e4",
+	"setup": "68bcaa73a25192656569115b55530503",
+	"schemas": [
+		{
+			"identifier": "list_saved_questions/schema.py",
+			"hash": "459ec21b745893a55e4a70dcd716de1a"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "f9f7fd1851d70a2eba93dffa09179b44"
+		}
+	]
+}

@@ -1,0 +1,70 @@
+plugin_spec_version: v2
+extension: plugin
+products: [insightconnect]
+name: tanium
+title: Tanium
+description: Testing the new format for inputs
+version: 1.0.0
+vendor: rapid7
+support: rapid7
+status: []
+tags:
+- tanium
+- rapid7
+hub_tags:
+  use_cases: [asset_inventory, remediation_management, vulnerability_management, reporting_and_analytics]
+  keywords: [tanium, rapid7]
+  features: []
+
+types:
+  question:
+    action_tracking_flag:
+      title: Action Tracking Flag
+      description: Action tracking flag
+      type: boolean
+      required: false
+
+connection:
+  username_and_password:
+    title: Username and Password
+    description: Your username and password
+    type: credential_username_password
+    required: true
+  domain:
+    title: Domain
+    description: The domian of the user loggin in
+    example: rapid7
+    type: string
+    required: true
+  host:
+    title: Host
+    description: URL to service
+    example: "https://taniumserver.rapid7.com"
+    type: string
+    required: true
+  verify_ssl:
+    title: Verify SSL
+    description: Enforce signed certificates for the tanium server
+    type: boolean
+    example: true
+    defult: true
+    required: true
+
+actions:
+  list_saved_questions:
+    title: list_saved_questions
+    description: Retrieve all saved question definitions on the server.
+    input:
+      maximum_returned_questions:
+        title: Maximum Returned Questions
+        description: The maximum number of questions to return use 0 for unlimited
+        type: integer
+        example: 100
+        defult: 0
+        required: true
+    output:
+      questions:
+        title: Questions
+        description: A list of saved suestions
+        type: "[]question"
+        required: true

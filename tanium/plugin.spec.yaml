@@ -55,13 +55,12 @@ actions:
     title: list_saved_questions
     description: Retrieve all saved question definitions on the server.
     input:
-      maximum_returned_questions:
-        title: Maximum Returned Questions
-        description: The maximum number of questions to return use 0 for unlimited
-        type: integer
-        example: 100
-        defult: 0
-        required: true
+      filter:
+        title: Filter
+        description: Filter results based on paramaters See tanium documentation on cache_filters for use
+        type: "[]object"
+        example:
+        required: false
     output:
       questions:
         title: Questions

@@ -1,4 +1,4 @@
-from komand.exceptions import PluginException
+from insightconnect_plugin_runtime.exceptions import PluginException
 import requests
 
 
@@ -24,17 +24,22 @@ class ResourceRequests(object):
         self.verify = verify
         self.session.headers.update(key)
 
-    def resource_request(self, uri: str, method: str = 'get', params: dict = None, payload: dict = None):
+    def resource_request(self, uri: str, method: str = 'get', headers: dict = None, params: dict = None, payload: dict = None):
         """
-        Sends a request to the tanium server with the provided uri and optional method params and payload
+        Sends a request to the Tanium server with the provided uri and optional method, headers, params, and payload
         :param uri: URI for the API call
         :param method: HTTP method for the API request
+        :param headers: additional headers for the API request
         :param params: URL parameters to append to the request
         :param payload: JSON body for the API request if required
         :return: Dict containing the JSON response body
         """
         url = f"{self.base_url}{uri}"
         self.logger.info(f"sending request to endpoint:\n {url}")
+
+        if headers:
+            self.session.headers.update(headers)
+
         extras = {"json": payload, "params": params}
         response = self.session.request(method, url, verify=self.verify, **extras)
         self.status_code_check(response.text, response.status_code)
@@ -45,10 +50,15 @@ class ResourceRequests(object):
             raise PluginException(preset=PluginException.Preset.INVALID_JSON)
         return data
 
-    def status_code_check(self, response_text, status_code):
+    @staticmethod
+    def status_code_check(response_text, status_code):
         """
         Checks for non 2xx status codes and raises an exception if found
         :param response_text: The text of the response
         :param status_code: response status code
         :return: None
         """
+        if status_code != 200:
+            # According to Tanium documentation the reason, if known, for a non 2xx status code will be in the body
+            raise PluginException(cause="The API endpoint returned a non 2xx status code. ",
+                                  assistance=f"Response body was:\n {response_text}")

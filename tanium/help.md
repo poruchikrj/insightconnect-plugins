@@ -27,6 +27,11 @@ The connection configuration accepts the following parameters:
 Example input:
 
 ```
+{
+  "domain": "rapid7",
+  "host": "https://taniumserver.rapid7.com",
+  "verify_ssl": true
+}
 ```
 
 ## Technical Details
@@ -41,7 +46,7 @@ This action is used to retrieve all saved question definitions on the server..
 
 |Name|Type|Default|Required|Description|Enum|Example|
 |----|----|-------|--------|-----------|----|-------|
-|maximum_returned_questions|integer|None|True|The maximum number of questions to return use 0 for unlimited|None|100|
+|filter|[]object|None|False|Filter results based on paramaters See tanium documentation on cache_filters for use|None|None|
 
 Example input:
 

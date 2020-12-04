@@ -8,7 +8,7 @@ class Component:
 
 
 class Input:
-    MAXIMUM_RETURNED_QUESTIONS = "maximum_returned_questions"
+    FILTER = "filter"
     
 
 class Output:
@@ -21,16 +21,16 @@ class ListSavedQuestionsInput(insightconnect_plugin_runtime.Input):
   "type": "object",
   "title": "Variables",
   "properties": {
-    "maximum_returned_questions": {
-      "type": "integer",
-      "title": "Maximum Returned Questions",
-      "description": "The maximum number of questions to return use 0 for unlimited",
+    "filter": {
+      "type": "array",
+      "title": "Filter",
+      "description": "Filter results based on paramaters See tanium documentation on cache_filters for use",
+      "items": {
+        "type": "object"
+      },
       "order": 1
     }
-  },
-  "required": [
-    "maximum_returned_questions"
-  ]
+  }
 }
     """)
 

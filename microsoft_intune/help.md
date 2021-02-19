@@ -58,7 +58,7 @@ Example input:
 
 #### Add application to a policy
 
-This action is used to add application to a policy.
+This action is used to add an application to a policy.
 
 ##### Input
 

@@ -28,6 +28,9 @@ class MicrosoftIntuneAPI:
             }
         )
 
+    def add_app_to_policy(self, application_name: str, device_name: str, policy_name: str, device_type: str):
+        return self._call_api("GET", "/deviceAppManagement/androidManagedAppProtections")
+
     def managed_device_action(self, device_id: str, action: str):
         return self._call_api("POST", f"deviceManagement/managedDevices/{device_id}/{action}")
 

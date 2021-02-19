@@ -615,3 +615,39 @@ actions:
         description: Return true if action was successfully performed on device
         type: boolean
         required: true
+  add_app_to_policy:
+    title: Add application to a policy
+    description: Add application to a policy
+    input:
+      application_name:
+        title: Application
+        description: Application name
+        type: string
+        required: true
+        example: Adobe Reader
+      device_name:
+        title: Device
+        description: Device name
+        type: string
+        required: true
+        example:
+      policy_name:
+        title: Policy
+        description: Policy name
+        type: string
+        required: true
+        example: my-android-app-policy
+      device_type:
+        title: Device type
+        description: Device type
+        type: "string"
+        required: true
+        enum:
+          - Android
+          - iOS
+    output:
+      success:
+        title: Success
+        description: Return true if action was successfully performed on device
+        type: object
+        required: false

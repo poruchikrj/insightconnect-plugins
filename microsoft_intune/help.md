@@ -56,6 +56,39 @@ Example input:
 
 ### Actions
 
+#### Add application to a policy
+
+This action is used to add application to a policy.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|application_name|string|None|True|Application name|None|Adobe Reader|
+|device_name|string|None|True|Device name|None|None|
+|device_type|string|None|True|Device type|['Android', 'iOS']|None|
+|policy_name|string|None|True|Policy name|None|my-android-app-policy|
+
+Example input:
+
+```
+{
+  "application_name": "Adobe Reader",
+  "policy_name": "my-android-app-policy"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|object|False|Return true if action was successfully performed on device|
+
+Example output:
+
+```
+```
+
 #### Wipe
 
 This action is used to wipe device by device name, device ID, user ID, or email address. It supports a whitelist to skip critical devices that should never be whitelisted.
